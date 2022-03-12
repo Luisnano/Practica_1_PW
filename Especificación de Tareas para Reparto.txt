@@ -1,0 +1,38 @@
+REPARTO DE TAREAS PARA PW
+
+A groso modo:
+*Diseño diagrama de entidades 
+*Crear Base de datos con ese diagrama en PHPmyadmin y añadir relleno de ejemplo.
+*Implementar un control de acceso (Login)
+*Implementar una base de gestión de datos para que los profes puedan meter preguntas
+*Implementar la generación de exámenes y guardado de respuestas en la BD
+*Implementar gestión y visualización de los resultados por profesor (media de alumnos) o de estudiantes (individual)
+*Implementar un menú de administrador para añadir profes y alumnos sin la necesidad de entrar en phpmyadmin (opcional)
+
+Esos son los requisítos para aprobar la práctica, de ahí podemos sacar las siguientes tareas:
+
+FASE 1, diseño de diagrama y funcionalidades
+	-estudiar las funciones que queremos añadir o tener en el programa. (Conjunto)
+	-valorar las tablas que se deben de crear (usuarios,grados,asignaturas...). (Conjunto)
+	-creación de cada tabla con sus características individuales (se reparten). 
+	-especificar las relaciones de cada tabla. (Conjunto)
+
+FASE 2, Funciones Básicas
+	-creación de un sistema de login con la base de datos, con su correspondiente seguridad.
+	-creación en phpmyadmin de las tablas especificadas en la fase anterior con ejemplos de relleno.
+	-crear la base de gestion de datos de las preguntas.
+	-implementación de la generación automática de exámenes a partir de la batería de preguntas.
+	-implementación del guardado de respuestas en la BD.
+	-implementación de la realización de un examen con guardado de nota.
+
+FASE 3, Funciones UserFriendly
+	-creación de los menús de gestión para perfil profesor (añadir preguntas, ver notas...).
+	-creación de los menús de gestión para perfil alumno (hacer exámenes, ver resultados...).
+	-implementar un menú administrador con las funcionalidades que se le pide.
+
+FASE 4, Extras
+	-Se añaden las funcionalizades extras que se pensaron en la FASE 1 (Conjunto)
+
+FASE 5, Front-End
+	-Una vez completadas todas las funcionalidades y testeado el funcionamiento de la web,
+	se retoca todos los aspectos visuales necesarios para embellecer la web. (Conjunto)
