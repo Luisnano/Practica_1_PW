@@ -11,24 +11,24 @@ A groso modo:
 
 Esos son los requisítos para aprobar la práctica, de ahí podemos sacar las siguientes tareas:
 
-FASE 1, diseño de diagrama y funcionalidades
+FASE 1, diseño de diagrama y funcionalidades (Luis)
 	-estudiar las funciones que queremos añadir o tener en el programa. (Conjunto)
 	-valorar las tablas que se deben de crear (usuarios,grados,asignaturas...). (Conjunto)
 	-creación de cada tabla con sus características individuales (se reparten). 
 	-especificar las relaciones de cada tabla. (Conjunto)
 
-FASE 2, Funciones Básicas
-	-creación de un sistema de login con la base de datos, con su correspondiente seguridad.
-	-creación en phpmyadmin de las tablas especificadas en la fase anterior con ejemplos de relleno.
-	-crear la base de gestion de datos de las preguntas.
-	-implementación de la generación automática de exámenes a partir de la batería de preguntas.
-	-implementación del guardado de respuestas en la BD.
-	-implementación de la realización de un examen con guardado de nota.
+FASE 2, Funciones Básicas 
+	-creación de un sistema de login con la base de datos, con su correspondiente seguridad. (Raul)
+	-creación en phpmyadmin de las tablas especificadas en la fase anterior con ejemplos de relleno. (Luis)
+	-crear la base de gestion de datos de las preguntas. (Roldan)
+	-implementación de la generación automática de exámenes a partir de la batería de preguntas. (Roldan)
+	-implementación del guardado de respuestas en la BD. (Raul)
+	-implementación de la realización de un examen con guardado de nota. (Raul)
 
 FASE 3, Funciones UserFriendly
-	-creación de los menús de gestión para perfil profesor (añadir preguntas, ver notas...).
-	-creación de los menús de gestión para perfil alumno (hacer exámenes, ver resultados...).
-	-implementar un menú administrador con las funcionalidades que se le pide.
+	-creación de los menús de gestión para perfil profesor (añadir preguntas, ver notas...). (Raul)
+	-creación de los menús de gestión para perfil alumno (hacer exámenes, ver resultados...). (Roldan)
+	-implementar un menú administrador con las funcionalidades que se le pide. (Luis)
 
 FASE 4, Extras
 	-Se añaden las funcionalizades extras que se pensaron en la FASE 1 (Conjunto)
