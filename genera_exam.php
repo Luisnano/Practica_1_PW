@@ -1,10 +1,13 @@
 <form action="procesa_respuesta.php" method="post">
 <?php
-    //Definicion de globales 
-    $RESPUESTAS_USADAS=[];//Para evitar la repetición de las respuestas
+    
+    /* -------------------------------------------------------------------------- */
+    /*                       VARIABLES GLOBALES_DEL_FICEHRO                       */
+    /* -------------------------------------------------------------------------- */
+   
 
 
-    //include('config.php');//Incluimos la configuración para obtener las globales
+    include('config.php');//Incluimos la configuración para obtener las globales
     
     //Inicio del programa (iniciamos sesión para comprobar si existe un usuario logeado)
     //session_start();
@@ -22,7 +25,9 @@
         echo "<h1>No estas logeado</h1>";
     */
     
-   
+   /* -------------------------------------------------------------------------- */
+   /*                                  FUNCIONES                                 */
+   /* -------------------------------------------------------------------------- */
 
     //Para obtener la respuesta elegida sin repetición
     function devuelve_respuesta($seleccion_preguntas, &$usadas){
@@ -44,29 +49,69 @@
         return $res_escogida;
     }
 
-    $pregunta=array("Pregunta 1","Pregunta 2","Pregunta 3","Pregunta 4");
-    $respuestas=array("a","b","c","d","e","f","g","h");
+    /* -------------------------------------------------------------------------- */
+    /*                              INICIO ALGORITMO                              */
+    /* -------------------------------------------------------------------------- */
+
+   
     
-    echo "<p>";
+    //obtenemos de la base de datos la lista de asignaturas
+    $id_preg_totales = array();
+    
+    foreach ( $connection->query("SELECT id_pregunta FROM pregunta ") as $i ){
+        array_push($id_preg_totales, $i['id_pregunta']);
+    }
+
+    //Truncamos en 4 preguntas (CONSULTAR MAS TARDE)
+    shuffle($id_preg_totales);//Hacemos el shuffle para seleccionar las 4 preguntas de forma aleatoria
+
+    while( count($id_preg_totales) > 4)
+        array_pop($id_preg_totales);
+
+    
+
+    /* ---------------------------- MOSTRANDO EL HTML --------------------------- */
+
+    for($i=0; $i < count($id_preg_totales); $i++){
         
-        $pregunta_generada=random_int(0,count($pregunta)-1);//Para guardar el numero de pregunta que se ha generado
+
+        $pregunta=$connection->query("select * from pregunta where id_pregunta = $id_preg_totales[$i]");
         
-        echo "<h1>Enunciado:".$pregunta[$pregunta_generada]."</h1>";
+        //Variables para hacerlo mas simple, el bucle for se requiere ya que se asuma que siempre puede haber n rows
+        
+        
+        foreach ($pregunta as $j){
+            
+            $enunciado=$j['texto_pregunta'];
+            $r1 = $j['r1'];
+            $r2 = $j['r2'];
+            $r3 = $j['r3'];
+            $r4 = $j['r4'];
+
+        }
+
+        //Corrección para evitar conversiones internas , evitar warnings
+        
+
+        echo "<p>";
+        
+        echo "<h1>Enunciado ".($i+1)." :<br>".$enunciado."</h1>";
         echo "<br>";
         echo "<br>";
         echo "Preguntas:<br>";
         echo "<br>";
-        echo "<input type='checkbox' name=p".$pregunta_generada."value=1/>".devuelve_respuesta($respuestas,$RESPUESTAS_USADAS);
+        echo "<input type='checkbox' name=p".$i."value=".$r1."/>"."a)".$r1;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$pregunta_generada."value=2/>".devuelve_respuesta($respuestas,$RESPUESTAS_USADAS);
+        echo "<input type='checkbox' name=p".$i."value=".$r2."/>"."a)".$r2;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$pregunta_generada."value=3/>".devuelve_respuesta($respuestas,$RESPUESTAS_USADAS);
+        echo "<input type='checkbox' name=p".$i."value=".$r3."/>"."a)".$r3;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$pregunta_generada."value=4/>".devuelve_respuesta($respuestas,$RESPUESTAS_USADAS);
+        echo "<input type='checkbox' name=p".$i."value=".$r4."/>"."a)".$r4;
         echo "<br>";
+        echo "</p>";
 
-    echo "</p>";
-
+    }
+    
 
 
 

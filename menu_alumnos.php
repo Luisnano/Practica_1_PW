@@ -13,7 +13,7 @@
     <p> 
         <a href="localhost/">Cambiar mi contraseña</a><br> 
         <a href="Practica_1_PW/genera_exam.php">Realizar examenes</a><br>
-        <!--Añadir desplegable de asignaturas y tal  -->
+        <!--Añadir desplegable de asignaturas y tal, DEBE MOSTRAR UNICAMENTE LAS MATRICULADAS POR EL ALUMNO  -->
         <a href="localhost/">Ver Calificaciones</a><br>
         <!--Las calificaciones mostradas serán las del alumno en cada una de las asignaturas y la media -->
 
