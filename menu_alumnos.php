@@ -12,7 +12,7 @@
     <br><br>
     <p> 
         <a href="localhost/">Cambiar mi contraseña</a><br> 
-        <a href="localhost/">Realizar examenes</a><br>
+        <a href="Practica_1_PW/genera_exam.php">Realizar examenes</a><br>
         <!--Añadir desplegable de asignaturas y tal  -->
         <a href="localhost/">Ver Calificaciones</a><br>
         <!--Las calificaciones mostradas serán las del alumno en cada una de las asignaturas y la media -->
