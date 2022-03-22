@@ -57,8 +57,11 @@
     
     //obtenemos de la base de datos la lista de asignaturas
     $id_preg_totales = array();
-    
-    foreach ( $connection->query("SELECT id_pregunta FROM pregunta ") as $i ){
+
+    $tema= $_POST['tema'];
+    $id_asignatura = $_POST['id_asignatura'];
+
+    foreach ( $connection->query("SELECT id_pregunta FROM pregunta where tema=$tema AND id_asignatura=$id_asignatura ") as $i ){
         array_push($id_preg_totales, $i['id_pregunta']);
     }
 
@@ -102,11 +105,11 @@
         echo "<br>";
         echo "<input type='checkbox' name=p".$i."value=".$r1."/>"."a)".$r1;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$i."value=".$r2."/>"."a)".$r2;
+        echo "<input type='checkbox' name=p".$i."value=".$r2."/>"."b)".$r2;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$i."value=".$r3."/>"."a)".$r3;
+        echo "<input type='checkbox' name=p".$i."value=".$r3."/>"."c)".$r3;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$i."value=".$r4."/>"."a)".$r4;
+        echo "<input type='checkbox' name=p".$i."value=".$r4."/>"."d)".$r4;
         echo "<br>";
         echo "</p>";
 
