@@ -18,6 +18,7 @@ FASE 1, diseño de diagrama y funcionalidades (Luis)
 	-especificar las relaciones de cada tabla. (Conjunto)
 
 FASE 2, Funciones Básicas 
+	-landing page (raul)
 	-creación de un sistema de login con la base de datos, con su correspondiente seguridad. (Raul)
 	-creación en phpmyadmin de las tablas especificadas en la fase anterior con ejemplos de relleno. (Luis)
 	-crear la base de gestion de datos de las preguntas. (Roldan)

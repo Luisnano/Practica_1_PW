@@ -1,7 +1,7 @@
 <?php
 //Config se utilizará para ser incluido en cada php que necesite tener acceso a la base de datos.
 define('USER', 'root');
-define('PASSWORD', 'polilla69');
+define('PASSWORD', '1001');
 define('HOST', 'localhost');
 define('DATABASE', 'test');
  
