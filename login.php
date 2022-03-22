@@ -33,6 +33,7 @@ if (isset($_POST['login'])) {
             if (password_verify($password, $resultprof['password'])) {
                 $_SESSION['user_id'] = $resultprof['id'];
                 echo '<p class="success">Éxito, eres un profesor.</p>';
+                header("Location: .$menu_profesores.php");
             } else {
                 echo '<p class="error">El usuario y la contraseña no coinciden! (profesor).</p>';
             }
@@ -42,6 +43,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $resultalum['password'])) {
             $_SESSION['user_id'] = $resultalum['id'];
             echo '<p class="success">Éxito, eres un alumno.</p>';
+            header("Location: .$menu_alumno.php");
         } else {
             echo '<p class="error">El usuario y la contraseña no coinciden!(alumno).</p>';
         }
