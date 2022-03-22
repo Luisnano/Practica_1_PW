@@ -21,6 +21,9 @@
   <link href="assets/css/style.css" rel="stylesheet">
 	</head>
 <?php
+
+//CODIDO BRUTO QUE REQUIERE DE REFINADO :D
+
 include('config.php');
 session_start();
  
@@ -71,16 +74,26 @@ if (isset($_POST['login'])) {
 }
 ?>
 
-<form method="post" action="" name="signin-form">
-    <div class="form-element">
-        <label>Username</label>
-        <input type="text" name="username" pattern="[a-zA-Z0-9]+" required />
-    </div>
-    <div class="form-element">
-        <label>Password</label>
-        <input type="password" name="password" required />
-    </div>
-    <div class="text-center"><button type="submit">Send Message</button></div>
-</form>
-</body>
+<section id="login" class="contact">
+    <div class="container">
+            <form action="" method="post" class="php-email-form">
+            <div class="row">
+            <div class="col-sm-4 form-group">
+            </div>
+            <div class="col-sm-4 form-group">
+                <input type="text" class="form-control" name="username" pattern="[a-zA-Z0-9]+" placeholder="Usuario" required />
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-4 form-group">
+            </div>
+            <div class="col-sm-4 form-group">
+                <input type="password" class="form-control" name="password" placeholder="Contraseña" required />
+            </div>
+            </div>
+            <div class="text-center"><button name="login" value="login" type="submit">Iniciar Sesión</button></div>
+            </form>
+        </div>
+        </div>
+</section>
 </html>
