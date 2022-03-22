@@ -11,7 +11,7 @@
     <form action="selecciona_tema.php" method="post">
 
         <?php
-            include('config.php');
+            include('../config.php');
             $query_asignatura = $connection->query("SELECT * FROM asignatura");
             
             //Creacion del desplegable

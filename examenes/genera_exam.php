@@ -7,7 +7,7 @@
    
 
 
-    include('config.php');//Incluimos la configuración para obtener las globales
+    include('../config.php');//Incluimos la configuración para obtener las globales
     
     //Inicio del programa (iniciamos sesión para comprobar si existe un usuario logeado)
     //session_start();

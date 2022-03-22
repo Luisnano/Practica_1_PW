@@ -12,7 +12,7 @@
         
         <?php
 
-            include('config.php');
+            include('../config.php');
             echo "<h1>Bienvenido al menu de seleccion de temas de ".$_POST['asignatura']."</h1>";
             $nombre_recibido = $_POST['asignatura'];
             $id_asig_recibido;
