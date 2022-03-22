@@ -20,8 +20,10 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 	</head>
-<?php
 
+
+<body>
+<?php
 //CODIDO BRUTO QUE REQUIERE DE REFINADO :D
 
 include('config.php');
@@ -96,4 +98,5 @@ if (isset($_POST['login'])) {
         </div>
         </div>
 </section>
+</body>
 </html>
