@@ -13,6 +13,7 @@
         <?php
             include('../config.php');
             $query_asignatura = $connection->query("SELECT * FROM asignatura");
+            //Hay que mostrar solos las asignaturas que esten verificados los alumnos
             
             //Creacion del desplegable
             echo "<h2> Selecciona la asignatura de la que deseas hacer el examen: </h2>";
