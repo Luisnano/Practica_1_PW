@@ -5,5 +5,11 @@ CREATE TABLE Examen (
     nota_examen int(5),
     PRIMARY KEY (id_examen),
     FOREIGN KEY (id_alumno) REFERENCES Grado (id_alumno)
+);
 
+INSERT INTO Examen VALUES (
+    1,
+    1,
+    (1, 2),
+    5
 );
