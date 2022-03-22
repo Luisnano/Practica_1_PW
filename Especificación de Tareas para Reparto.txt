@@ -23,7 +23,7 @@ FASE 2, Funciones Básicas
 	-creación en phpmyadmin de las tablas especificadas en la fase anterior con ejemplos de relleno. (Luis)
 	-crear la base de gestion de datos de las preguntas. (Roldan)
 	-implementación de la generación automática de exámenes a partir de la batería de preguntas. (Roldan)
-	-implementación del guardado de respuestas en la BD. (Raul)
+	-implementación del guardado de respuestas en la BD. (Roldan)
 	-implementación de la realización de un examen con guardado de nota. (Raul)
 
 FASE 3, Funciones UserFriendly
