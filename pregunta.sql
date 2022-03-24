@@ -19,7 +19,7 @@ INSERT INTO Pregunta VALUES(
     '2',
     '3',
     '4',
-    2,
+    '2',
     'Arboles'
 );
 INSERT INTO Pregunta VALUES(
@@ -30,7 +30,7 @@ INSERT INTO Pregunta VALUES(
     '2',
     'Unos cuantos xDDDDDD',
     '4',
-    3,
+    'Unos cuantos xDDDDDD',
     'Arboles'
 );
 INSERT INTO Pregunta VALUES(
@@ -41,7 +41,7 @@ INSERT INTO Pregunta VALUES(
     'no',
     'maybe',
     'lol',
-    1,
+    'yes',
     'Computer'
 );
 INSERT INTO Pregunta VALUES(
@@ -52,6 +52,6 @@ INSERT INTO Pregunta VALUES(
     'what?',
     '4',
     'bababoye',
-    3,
+    '4',
     'Computer'
 );
