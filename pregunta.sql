@@ -6,8 +6,8 @@ CREATE TABLE Pregunta (
     r2 varchar(200) NOT NULL,
     r3 varchar(200) NOT NULL,
     r4 varchar(200) NOT NULL,
-    correcta int(1),
-    tema varchar(50),
+    correcta varchar(5) NOT NULL,
+    tema varchar(50) NOT NULL,
     PRIMARY KEY (id_pregunta),
     FOREIGN KEY id_asignatura REFERENCES Asignatura (id_asignatura)
 );
