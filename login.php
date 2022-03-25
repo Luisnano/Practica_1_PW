@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>VC - Login</title>
+		<title>VC | Login</title>
         <!-- Favicons -->
         <link href="assets/img/favicon.png" rel="icon">
         <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -21,8 +21,16 @@
   <link href="assets/css/style.css" rel="stylesheet">
 	</head>
 
-
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: 1%;
+        }
+    </style>
 <body>
+
+<h1>Inicio Sesión</h1>
+
 <?php
 //CODIDO BRUTO QUE REQUIERE DE REFINADO :D
 
@@ -93,7 +101,11 @@ if (isset($_POST['login'])) {
                 <input type="password" class="form-control" name="password" placeholder="Contraseña" required />
             </div>
             </div>
-            <div class="text-center"><button name="login" value="login" type="submit">Iniciar Sesión</button></div>
+            <div class="text-center">
+                <button name="login" value="login" type="submit">Iniciar Sesión</button>
+                <a href="index.html" class="btn-get-started animate__animated animate__fadeInUp scrollto">Volver</a>
+            </div>
+            
             </form>
         </div>
         </div>
