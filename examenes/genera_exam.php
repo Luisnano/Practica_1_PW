@@ -103,13 +103,13 @@
         echo "<br>";
         echo "Preguntas:<br>";
         echo "<br>";
-        echo "<input type='checkbox' name=p".$i."value=".$r1."/>"."a)".$r1;
+        echo "<input type='radio' name=p".$i."value=".$r1."/>"."a)".$r1;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$i."value=".$r2."/>"."b)".$r2;
+        echo "<input type='radio' name=p".$i."value=".$r2."/>"."b)".$r2;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$i."value=".$r3."/>"."c)".$r3;
+        echo "<input type='radio' name=p".$i."value=".$r3."/>"."c)".$r3;
         echo "<br>";
-        echo "<input type='checkbox' name=p".$i."value=".$r4."/>"."d)".$r4;
+        echo "<input type='radio' name=p".$i."value=".$r4."/>"."d)".$r4;
         echo "<br>";
         echo "</p>";
 

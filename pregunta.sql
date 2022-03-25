@@ -6,8 +6,8 @@ CREATE TABLE Pregunta (
     r2 varchar(200) NOT NULL,
     r3 varchar(200) NOT NULL,
     r4 varchar(200) NOT NULL,
-    correcta int(1),
-    tema varchar(50),
+    correcta varchar(5) NOT NULL,
+    tema varchar(50) NOT NULL,
     PRIMARY KEY (id_pregunta),
     FOREIGN KEY id_asignatura REFERENCES Asignatura (id_asignatura)
 );
@@ -19,7 +19,7 @@ INSERT INTO Pregunta VALUES(
     '2',
     '3',
     '4',
-    2,
+    '2',
     'Arboles'
 );
 INSERT INTO Pregunta VALUES(
@@ -30,7 +30,7 @@ INSERT INTO Pregunta VALUES(
     '2',
     'Unos cuantos xDDDDDD',
     '4',
-    3,
+    'Unos cuantos xDDDDDD',
     'Arboles'
 );
 INSERT INTO Pregunta VALUES(
@@ -41,7 +41,7 @@ INSERT INTO Pregunta VALUES(
     'no',
     'maybe',
     'lol',
-    1,
+    'yes',
     'Computer'
 );
 INSERT INTO Pregunta VALUES(
@@ -52,6 +52,6 @@ INSERT INTO Pregunta VALUES(
     'what?',
     '4',
     'bababoye',
-    3,
+    '4',
     'Computer'
 );
