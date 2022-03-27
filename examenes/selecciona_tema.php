@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    $_SESSION['id_asignatura']=$_POST['asignatura'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,18 +20,23 @@
         <?php
 
             include('../config.php');
-            echo "<h1>Bienvenido al menu de seleccion de temas de ".$_POST['asignatura']."</h1>";
-            $nombre_recibido = $_POST['asignatura'];
-            $id_asig_recibido;
-            foreach($connection->query("SELECT * FROM asignatura") as $i)
+            foreach(
+                $connection->query("select nombre,id_asignatura from asignatura")
+                as $i
+            )
             {
-                if($i['nombre'] == $nombre_recibido)
-                    $id_asig_recibido = $i['id_asignatura'];
+                if($i['id_asignatura'] == $_SESSION['id_asignatura'])
+                echo "<h1>Bienvenido al menu de seleccion de temas de ".$i['nombre']."</h1>";
             }
+
+
             
+            
+            
+
             //Para evitar duplicacion obtendremos todos los temas de la asignatura dada
             $temas = array();
-            foreach($connection->query("SELECT * FROM pregunta where id_asignatura = $id_asig_recibido") as $i){
+            foreach($connection->query("SELECT * FROM pregunta where id_asignatura =".$_SESSION['id_asignatura']) as $i){
                 
                 if (!in_array($i['tema'],$temas))
                     array_push($temas,$i['tema']);
@@ -40,11 +52,6 @@
                 }
             echo "</select>";
             
-            echo "<br>";
-            echo "<h2>Asignatura seleccionada previamente</h2>";
-            echo "<select name ='id_asignatura'>";
-                echo "<option value=".$id_asig_recibido.">".$_POST['asignatura']."</option>";
-            echo "</select>";
 
         ?>
 
