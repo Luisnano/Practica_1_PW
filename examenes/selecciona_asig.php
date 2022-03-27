@@ -19,7 +19,7 @@
             echo "<h2> Selecciona la asignatura de la que deseas hacer el examen: </h2>";
             echo "<select name='asignatura'>";
                 foreach($connection->query("SELECT * FROM asignatura") as $i){
-                    echo "<option value=".$i['nombre'].">".$i['nombre']."</option>";
+                    echo "<option value=".$i['id_asignatura'].">".$i['nombre']."</option>";
                 }
             echo "</select>";
 

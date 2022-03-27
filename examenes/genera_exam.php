@@ -1,3 +1,5 @@
+
+
 <form action="procesa_respuesta.php" method="post">
 <?php
     
@@ -5,7 +7,7 @@
     /*                       VARIABLES GLOBALES_DEL_FICEHRO                       */
     /* -------------------------------------------------------------------------- */
    
-
+    session_start();
 
     include('../config.php');//Incluimos la configuración para obtener las globales
     
@@ -59,9 +61,10 @@
     $id_preg_totales = array();
 
     $tema= $_POST['tema'];
-    $id_asignatura = $_POST['id_asignatura'];
+    $id_asignatura = $_SESSION['id_asignatura'];
 
-    foreach ( $connection->query("SELECT id_pregunta FROM pregunta where tema=$tema AND id_asignatura=$id_asignatura ") as $i ){
+    foreach ( $connection->query("SELECT * FROM pregunta ") as $i ){
+        if($i['tema'] == $tema && $i['id_asignatura'] == $id_asignatura)
         array_push($id_preg_totales, $i['id_pregunta']);
     }
 
