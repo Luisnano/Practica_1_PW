@@ -1,6 +1,6 @@
 CREATE TABLE Asig_Prof (
-    id_asignatura int(5), 
-    id_profesor int(5),
+    id_asignatura int(5) unsigned NOT NULL, 
+    id_profesor int(5) unsigned NOT NULL,
     PRIMARY KEY (id_asignatura, id_profesor),
     FOREIGN KEY id_asignatura REFERENCES Asignatura (id_asignatura),
     FOREIGN KEY id_profesor REFERENCES Profesor (id_profesor)

@@ -1,6 +1,6 @@
 CREATE TABLE Asignatura (
     id_asignatura int(5) unsigned NOT NULL auto_increment,
-    id_grado int(5), 
+    id_grado int(5) unsigned NOT NULL, 
     nombre varchar(50) NOT NULL,
     alumnos_matriculados int(5),
     PRIMARY KEY (id_asignatura),
