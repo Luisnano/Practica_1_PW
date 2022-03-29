@@ -28,7 +28,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-<h1>Por favor, Inicia sesión con el usuario adecuado para acceder a este contenido.</h1>
+<h2>Por favor, Inicia sesión con el usuario adecuado para acceder a este contenido.</h2>
 <h3>Redirigiendo al Inicio de Sesión en 5 Segundos...</h3>
 
 </body>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false || $_SESSION['tipo'] != 'profesor'){
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION['tipo'] != 'profesor'){
   header("Location: mensaje_error.php");
 }
 ?>
@@ -54,7 +56,7 @@
             </ul>
           </li>
           <li><a href="services.html">Perfil</a></li>
-          <li><a href="index.html" class="getstarted">Buenas, Luis</a></li>
+          <li><a href="index.html" class="getstarted"><?php echo $_SESSION['nombre']; ?></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
