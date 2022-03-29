@@ -1,6 +1,6 @@
 CREATE TABLE Pregunta (
     id_pregunta int(5) unsigned NOT NULL auto_increment, 
-    id_asignatura int(5),
+    id_asignatura int(5) unsigned NOT NULL,
     texto_pregunta varchar(200) NOT NULL,
     r1 varchar(200) NOT NULL,
     r2 varchar(200) NOT NULL,
