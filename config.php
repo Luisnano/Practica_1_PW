@@ -10,4 +10,12 @@ try {
 } catch (PDOException $e) {
     exit("Error: " . $e->getMessage());
 }
+/*
+$_SESSION['id'] = $resultprof['id_profesor'];
+$_SESSION['username'] = $resultprof['user_prof'];
+$_SESSION['nombre'] = $resultprof['nombre_profesor'];
+$_SESSION['loggedin'] = true;
+$_SESSION['tipo'] = 'profesor';
+*/
+
 ?>

@@ -41,7 +41,7 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
     
     //Intenta buscar el usuario en la tabla alumnos.
-    $queryalum = $connection->prepare("SELECT * FROM estudiante WHERE user_prof=:username");
+    $queryalum = $connection->prepare("SELECT * FROM estudiante WHERE user_alum=:username");
     $queryalum->bindParam("username", $username, PDO::PARAM_STR);
     $queryalum->execute();
 
@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
     //Si el usuario no se encuentra en tabla alumnos, lo intenta buscar en el de profesores.
     if (!$resultalum){
 
-        $queryprof = $connection->prepare("SELECT * FROM profesor WHERE user_alum=:username");
+        $queryprof = $connection->prepare("SELECT * FROM profesor WHERE user_prof=:username");
         $queryprof->bindParam("username", $username, PDO::PARAM_STR);
         $queryprof->execute();
 
@@ -60,12 +60,13 @@ if (isset($_POST['login'])) {
             echo '<p class="error">El usuario no figura en la BD.</p>';
         }
         else{
-            if (password_verify($password, $resultprof['password'])) {
-                $_SESSION['user_name'] = $resultprof['id'];
+            if (password_verify($password, $resultprof['contraseña_profesor'])) {
+                $_SESSION['id'] = $resultprof['id_profesor'];
+                $_SESSION['username'] = $resultprof['user_prof'];
+                $_SESSION['nombre'] = $resultprof['nombre_profesor'];
                 $_SESSION['loggedin'] = true;
+                $_SESSION['tipo'] = 'profesor';
 
-
-                
                 header("Location: menu_profesores.php");
                 die();
             } else {
@@ -74,10 +75,14 @@ if (isset($_POST['login'])) {
         }
 
     } else {
-        if (password_verify($password, $resultalum['password'])) {
-            $_SESSION['user_id'] = $resultalum['id'];
-            echo '<p class="success">Éxito, eres un alumno.</p>';
-            header("Location: menu_alumno.php");
+        if (password_verify($password, $resultalum['contraseña_estudiante'])) {
+            
+            $_SESSION['id'] = $resultprof['id_estudiante'];
+            $_SESSION['username'] = $resultprof['user_alum'];
+            $_SESSION['nombre'] = $resultprof['nombre_estudiante'];
+            $_SESSION['loggedin'] = true;
+            $_SESSION['tipo'] = 'alumno';
+            header("Location: menu_alumnos.php");
             die();
         } else {
             echo '<p class="error">El usuario y la contraseña no coinciden!(alumno).</p>';

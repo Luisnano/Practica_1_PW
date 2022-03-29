@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false || $_SESSION['tipo'] != 'profesor'){
-  header("Location: mensaje_error.php");
-}
-?>
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>VC | Profesores</title>
+  <title>Inaccesible!</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -33,31 +27,15 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
-
 <body>
+<h1>Por favor, Inicia sesión con el usuario adecuado para acceder a este contenido.</h1>
+<h3>Redirigiendo al Inicio de Sesión en 5 Segundos...</h3>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
+</body>
+</html>
 
-      <h1 class="logo me-auto"><a href="index.html">Virtual Campus</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-
-          <li class="dropdown"><a href="#"><span>Gestión</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="about.html">Preguntas</a></li>
-              <li><a href="about.html">Resultados</a></li>
-            </ul>
-          </li>
-          <li><a href="services.html">Perfil</a></li>
-          <li><a href="index.html" class="getstarted">Buenas, Luis</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
+<script>
+            setTimeout(function() {
+                window.location.href="login.php";
+            }, 5000);
+        </script>
