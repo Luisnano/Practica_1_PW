@@ -4,7 +4,7 @@
 ?>
 
 <?php
-include('../config.php');
+include('config.php');
 include('clases_examen.php');
 
     //Variables de la clase examen

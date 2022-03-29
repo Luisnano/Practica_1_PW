@@ -5,7 +5,7 @@ CREATE TABLE Profesor (
     es_coordinador bit NOT NULL,
     nombre_profesor varchar(50) NOT NULL,
     contraseña_profesor varchar(50) NOT NULL,
-    PRIMARY KEY (id_profesor),
+    PRIMARY KEY (id_profesor)
 );
 INSERT INTO Profesor VALUES(
     1,
