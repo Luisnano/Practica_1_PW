@@ -1,4 +1,9 @@
-
+<?php
+    session_start();
+    $_SESSION['n_preguntas']=0;
+    $_SESSION['id_pregs']=array();
+    $_SESSION['id_alumno']=1;
+?>
 
 <form action="procesa_respuesta.php" method="post">
 <?php
@@ -6,9 +11,8 @@
     /* -------------------------------------------------------------------------- */
     /*                       VARIABLES GLOBALES_DEL_FICEHRO                       */
     /* -------------------------------------------------------------------------- */
-   
-    session_start();
-
+    
+    include('clases_examen.php');
     include('../config.php');//Incluimos la configuración para obtener las globales
     
     //Inicio del programa (iniciamos sesión para comprobar si existe un usuario logeado)
@@ -51,6 +55,8 @@
         return $res_escogida;
     }
 
+    
+
     /* -------------------------------------------------------------------------- */
     /*                              INICIO ALGORITMO                              */
     /* -------------------------------------------------------------------------- */
@@ -74,6 +80,11 @@
     while( count($id_preg_totales) > 4)
         array_pop($id_preg_totales);
 
+    /* ------------------------- Preparamos EL NUEVO EXAMEN ------------------------ */
+    //Variables de EXAMEN (id_examen,id_alumno,id_pregunta)
+    $_SESSION['n_preguntas']=count($id_preg_totales);
+    $_SESSION['ids_pregs']=$id_preg_totales;
+    
     
 
     /* ---------------------------- MOSTRANDO EL HTML --------------------------- */
@@ -92,13 +103,18 @@
             $r1 = $j['r1'];
             $r2 = $j['r2'];
             $r3 = $j['r3'];
-            $r4 = $j['r4'];
+            $r4 = $j['r4'];            
+            
+            //Eliminacion de espacios para enviar de forma correcta las respuestas
+            $v1 = elimina_espacios($j['r1']);
+            $v2 = elimina_espacios($j['r2']);
+            $v3 = elimina_espacios($j['r3']);
+            $v4 = elimina_espacios($j['r4']);
 
         }
-
         //Corrección para evitar conversiones internas , evitar warnings
         
-
+        $j=$i+1; //Para que quede mas bonito con respecto al post
         echo "<p>";
         
         echo "<h1>Enunciado ".($i+1)." :<br>".$enunciado."</h1>";
@@ -106,16 +122,16 @@
         echo "<br>";
         echo "Preguntas:<br>";
         echo "<br>";
-        echo "<input type='radio' name=p".$i."value=".$r1."/>"."a)".$r1;
+        echo "<input type='radio' name=$j value='$v1'/>"."a)".$r1;
         echo "<br>";
-        echo "<input type='radio' name=p".$i."value=".$r2."/>"."b)".$r2;
+        echo "<input type='radio' name=$j value='$v2'/>"."b)".$r2;
         echo "<br>";
-        echo "<input type='radio' name=p".$i."value=".$r3."/>"."c)".$r3;
+        echo "<input type='radio' name=$j value='$v3'/>"."c)".$r3;
         echo "<br>";
-        echo "<input type='radio' name=p".$i."value=".$r4."/>"."d)".$r4;
+        echo "<input type='radio' name=$j value='$v4'/>"."d)".$r4;
         echo "<br>";
         echo "</p>";
-
+        
     }
     
 
