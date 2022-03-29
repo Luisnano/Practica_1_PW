@@ -8,11 +8,15 @@ CREATE TABLE Estudiante (
 );
 INSERT INTO Estudiante VALUES(
     1,
+    'raularcos',
     'Raul', 
-    'Arcos Herrera'
+    'Arcos Herrera',
+    '$2y$10$mRXRfxSUyzGGcZf30JL0WOE2bvYja1nYR88dux3jM5GDwET8b0spy'
 );
 INSERT INTO Estudiante VALUES(
     2,
+    'antonioroldan',
     'Antonio', 
-    'Roldan Andrade'
+    'Roldan Andrade',
+    '$2y$10$mRXRfxSUyzGGcZf30JL0WOE2bvYja1nYR88dux3jM5GDwET8b0spy'
 );

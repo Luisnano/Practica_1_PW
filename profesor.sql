@@ -9,13 +9,17 @@ CREATE TABLE Profesor (
 );
 INSERT INTO Profesor VALUES(
     1,
+    'joseantoniodelahuerta',
     2, 
     1,
-    'Jose Alonso de La Huerta'
+    'Jose Alonso de La Huerta',
+    '$2y$10$mRXRfxSUyzGGcZf30JL0WOE2bvYja1nYR88dux3jM5GDwET8b0spy'
 );
 INSERT INTO Profesor VALUES(
     2,
+    'eneas',
     1, 
     1,
-    'Eneas Sanchez DonPerignon'
+    'Eneas Sanchez DonPerignon',
+    '$2y$10$mRXRfxSUyzGGcZf30JL0WOE2bvYja1nYR88dux3jM5GDwET8b0spy'
 );

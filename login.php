@@ -32,8 +32,6 @@
 <h1>Inicio Sesión</h1>
 
 <?php
-//CODIDO BRUTO QUE REQUIERE DE REFINADO :D
-
 include('config.php');
 session_start();
  
@@ -43,15 +41,16 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
     
     //Intenta buscar el usuario en la tabla alumnos.
-    $queryalum = $connection->prepare("SELECT * FROM alumno WHERE username=:username");
+    $queryalum = $connection->prepare("SELECT * FROM estudiante WHERE user_prof=:username");
     $queryalum->bindParam("username", $username, PDO::PARAM_STR);
     $queryalum->execute();
 
     $resultalum = $queryalum->fetch(PDO::FETCH_ASSOC);
     
     //Si el usuario no se encuentra en tabla alumnos, lo intenta buscar en el de profesores.
-    if (!$resultalum) {
-        $queryprof = $connection->prepare("SELECT * FROM profesor WHERE username=:username");
+    if (!$resultalum){
+
+        $queryprof = $connection->prepare("SELECT * FROM profesor WHERE user_alum=:username");
         $queryprof->bindParam("username", $username, PDO::PARAM_STR);
         $queryprof->execute();
 
@@ -62,8 +61,11 @@ if (isset($_POST['login'])) {
         }
         else{
             if (password_verify($password, $resultprof['password'])) {
-                $_SESSION['user_id'] = $resultprof['id'];
-                echo '<p class="success">Éxito, eres un profesor.</p>';
+                $_SESSION['user_name'] = $resultprof['id'];
+                $_SESSION['loggedin'] = true;
+
+
+                
                 header("Location: menu_profesores.php");
                 die();
             } else {
