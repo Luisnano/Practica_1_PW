@@ -1,5 +1,6 @@
 CREATE TABLE Profesor (
     id_profesor int(5) unsigned NOT NULL auto_increment,
+    user_prof varchar(50) NOT NULL,
     id_asignatura int(5) unsigned NOT NULL, 
     es_coordinador bit NOT NULL,
     nombre_profesor varchar(50) NOT NULL,
