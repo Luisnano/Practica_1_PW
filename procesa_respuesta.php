@@ -39,5 +39,5 @@ include('clases_examen.php');
     $connection->prepare($insercion)->execute([$alumno,$seleccionadas,$nota_examen]);
     
     
-    header("Location: http://localhost/Practica_1_PW/menu_alumnos.php");
+    header("Location: menu_alumnos.php");
 ?>

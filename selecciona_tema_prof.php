@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <br></br>
                 <div style="text-align:center;">
                     <input type="submit" name="asignatura" class="btn btn-danger" value="Seleccionar">
-                    <a href="index.html" id="boton" class="btn btn-warning">Cancelar</a>                   
+                    <a href="menu_profesores.php" id="boton" class="btn btn-warning">Cancelar</a>                   
                 </div>
             </form>
         </div> 

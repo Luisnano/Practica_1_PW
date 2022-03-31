@@ -49,9 +49,9 @@ foreach($connection->query("SELECT nombre FROM asignatura WHERE id_asignatura = 
         </div>
     </div>
     <div class="d-flex justify-content-center">
-    <form action="" method="post" class="php-email-form">
-        <button class="btn btn-danger" name="id_asig" value="<?php echo $datos['id_asignatura']?>" type="submit">Añadir</button>
-    </form>
+        <form action="anadir_pregunta.php" method="post" class="php-email-form">
+            <button class="btn btn-danger" name="id_asig" value="<?php echo $datos['id_asignatura']?>" type="submit">Añadir</button>
+        </form>
     </div>
 </section>
 </body>
