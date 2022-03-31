@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION['tipo'] != 'profesor'){
+if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION['tipo'] != 'alumno'){
   header("Location: mensaje_error.php");
 }
 ?>
