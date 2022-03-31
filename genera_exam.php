@@ -2,7 +2,7 @@
     session_start();
     $_SESSION['n_preguntas']=0;
     $_SESSION['id_pregs']=array();
-    $_SESSION['id_alumno']=1;
+    
 ?>
 <?php
     include('assets/headers/header_alum.php');

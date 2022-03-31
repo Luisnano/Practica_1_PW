@@ -8,7 +8,7 @@ include('config.php');
 include('clases_examen.php');
 
     //Variables de la clase examen
-    $alumno=$_SESSION['id_alumno'];
+    $alumno=$_SESSION['id'];
     $preguntas=$_SESSION['ids_pregs'];
     $seleccionadas="";
 
