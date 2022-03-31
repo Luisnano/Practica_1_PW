@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION['tipo'] != 'profesor'){
+  header("Location: mensaje_error.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
