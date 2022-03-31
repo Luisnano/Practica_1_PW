@@ -5,7 +5,6 @@ $id_prof = $_SESSION['id'];
 $id_asig_edit = $_SESSION['id_asig_edit'];
 $tema_edit = $_SESSION['tema_edit'];
 
-$tema_asig = "SELECT id_asignatura,tema FROM pregunta WHERE id_asignatura = $id_asig_edit GROUP BY tema";
 $info_preguntas = "SELECT * FROM pregunta WHERE tema = '$tema_edit'";
 foreach($connection->query("SELECT nombre FROM asignatura WHERE id_asignatura = $id_asig_edit") as $asig_edit){
     $nombre_asig = $asig_edit['nombre'];
