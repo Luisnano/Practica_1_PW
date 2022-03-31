@@ -3,7 +3,7 @@ CREATE TABLE Estudiante (
     user_alum varchar(50) NOT NULL,
     nombre_estudiante varchar(50) ,
     apellido_estudiante varchar(50),
-    contraseña_estudiante varchar(250) NOT NULL,
+    contraseña_estudiante varchar(255) NOT NULL,
     PRIMARY KEY (id_estudiante)
 );
 INSERT INTO Estudiante VALUES(
