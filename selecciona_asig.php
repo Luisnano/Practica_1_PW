@@ -28,7 +28,6 @@
                             echo "<option value=".$i['id_asignatura'].">".$i['nombre']."</option>";
                         
                         }
-                    
                     }
                 }
             echo "</select>";

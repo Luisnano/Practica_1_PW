@@ -8,6 +8,8 @@
 <body>
     <br><br>
     <h1>Bienvenido a tus Calificaciones</h1>
+    <br><br>
+    <h2>Calificaciones totales  </h2>
     <table>
         
         <?php
@@ -20,7 +22,7 @@
             echo "</tr>";
             foreach($res as $i){
                 
-                if($i['id_alumno']==$_SESSION['al_temporal'])
+                if($i['id_alumno']==$_SESSION['id'])
                 {
                     $media+=$i['nota_examen'];
                     ++$n_notas;
@@ -39,5 +41,8 @@
             
         ?>
     </table>
-    <a href="localhost/Practica_1_PW/menu_alumnos.php">Volver atras</a>
+    
+
+
+    <a href="menu_alumnos.php">Volver atras</a>
 </body>
