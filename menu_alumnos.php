@@ -6,7 +6,7 @@
     include('assets/headers/header_alum.php');
     
     echo"<h1>". $_SESSION['id']."</h1>";
-?>
+?> 
 
     <h1>Bienvenido, ¿Qué quieres hacer hoy?</h1>
     

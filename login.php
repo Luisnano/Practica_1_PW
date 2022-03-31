@@ -77,9 +77,9 @@ if (isset($_POST['login'])) {
     } else {
         if (password_verify($password, $resultalum['contraseña_estudiante'])) {
             
-            $_SESSION['id'] = $resultprof['id_estudiante'];
-            $_SESSION['username'] = $resultprof['user_alum'];
-            $_SESSION['nombre'] = $resultprof['nombre_estudiante'];
+            $_SESSION['id'] = $resultalum['id_estudiante'];
+            $_SESSION['username'] = $resultalum['user_alum'];
+            $_SESSION['nombre'] = $resultalum['nombre_estudiante'];
             $_SESSION['loggedin'] = true;
             $_SESSION['tipo'] = 'alumno';
             header("Location: menu_alumnos.php");
