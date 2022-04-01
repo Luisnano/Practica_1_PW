@@ -5,8 +5,8 @@ CREATE TABLE Asig_Prof (
     id_asignatura int(5) unsigned NOT NULL, 
     id_profesor int(5) unsigned NOT NULL,
     PRIMARY KEY (id_asignatura, id_profesor),
-    FOREIGN KEY id_asignatura REFERENCES Asignatura (id_asignatura),
-    FOREIGN KEY id_profesor REFERENCES Profesor (id_profesor)
+    FOREIGN KEY (id_asignatura) REFERENCES Asignatura (id_asignatura),
+    FOREIGN KEY (id_profesor) REFERENCES Profesor (id_profesor)
 );
 CREATE TABLE Asignatura (
     id_asignatura int(5) unsigned NOT NULL auto_increment,
@@ -50,8 +50,8 @@ CREATE TABLE Matricula (
     id_estudiante int(5) unsigned NOT NULL,
     nota_final float(5) unsigned NOT NULL,
     PRIMARY KEY (id_asignatura, id_estudiante),
-    FOREIGN KEY id_asignatura REFERENCES Asignatura (id_asignatura),
-    FOREIGN KEY id_estudiante REFERENCES Estudiante (id_estudiante)
+    FOREIGN KEY (id_asignatura) REFERENCES Asignatura (id_asignatura),
+    FOREIGN KEY (id_estudiante) REFERENCES Estudiante (id_estudiante)
 );
 CREATE TABLE Pregunta (
     id_pregunta int(5) unsigned NOT NULL auto_increment, 
@@ -64,7 +64,7 @@ CREATE TABLE Pregunta (
     correcta varchar(5) NOT NULL,
     tema varchar(50) NOT NULL,
     PRIMARY KEY (id_pregunta),
-    FOREIGN KEY id_asignatura REFERENCES Asignatura (id_asignatura)
+    FOREIGN KEY (id_asignatura) REFERENCES Asignatura (id_asignatura)
 );
 CREATE TABLE Profesor (
     id_profesor int(5) unsigned NOT NULL auto_increment,

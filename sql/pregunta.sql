@@ -9,7 +9,7 @@ CREATE TABLE Pregunta (
     correcta varchar(5) NOT NULL,
     tema varchar(50) NOT NULL,
     PRIMARY KEY (id_pregunta),
-    FOREIGN KEY id_asignatura REFERENCES Asignatura (id_asignatura)
+    FOREIGN KEY (id_asignatura) REFERENCES Asignatura (id_asignatura)
 );
 INSERT INTO Pregunta VALUES(
     1,
