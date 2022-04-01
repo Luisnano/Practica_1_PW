@@ -82,6 +82,7 @@ if (isset($_POST['login'])) {
             $_SESSION['nombre'] = $resultalum['nombre_estudiante'];
             $_SESSION['loggedin'] = true;
             $_SESSION['tipo'] = 'alumno';
+            
             header("Location: menu_alumnos.php");
             die();
         } else {

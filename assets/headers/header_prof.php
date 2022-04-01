@@ -42,7 +42,7 @@ if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Virtual Campus</a></h1>
+      <h1 class="logo me-auto"><a href="menu_profesores.php">Virtual Campus</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -56,7 +56,7 @@ if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION
             </ul>
           </li>
           <li><a href="services.html">Perfil</a></li>
-          <li><a href="index.html" class="getstarted"><?php echo $_SESSION['nombre']; ?></a></li>
+          <li><a href="menu_profesores.php" class="getstarted"><?php echo $_SESSION['nombre']; ?></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
