@@ -20,20 +20,26 @@ if (isset($_POST['anadir'])) {
   $r4 = $_POST['r4'];
   $correcta = $_POST['correcta'];
 
-
+  //Insertamos pregunta en la BD.
   $anadirpregunta = "INSERT INTO pregunta (id_asignatura,texto_pregunta,r1,r2,r3,r4,correcta,tema) VALUES (?,?,?,?,?,?,?,?)";
-  $connection->prepare($insercion)->execute([$id_asig_edit,$pregunta,$r1,$r2,$r3,$r4,$correcta,$tema_asig]);
+  $connection->prepare($anadirpregunta)->execute([$id_asig_edit,$pregunta,$r1,$r2,$r3,$r4,$correcta,$tema_asig]);
 
-  $consultapregunta = "SELECT texto_pregunta FROM pregunta";
+  //Comprobamos que la pregunta que hemos añadido se encuentra en la BD.
+  $consultapregunta = "SELECT texto_pregunta FROM pregunta WHERE tema = '$tema_asig'";
+  $preguntas = $qconsultapregunta->fetch(PDO::FETCH_ASSOC);
+  if($preguntas['textopregunta'] == $pregunta)
+    header("Location: mensaje_anadido_exito.php");
+  else
+    echo '<p class="error">Error! Comprueba que todos los datos son correctos o contacta con el administrador.</p>';
 
-  header("Location: mensaje_anadido_exito.php");
+  
 }
 ?>
 <section id="contact" class="contact">
       <div class="container">
 
         <div class="row mt-5">
-            <form action="" method="post" role="form" class="php-email-form">
+            <form action="" method="post" class="php-email-form">
               <div class="form-group mt-3">
                 <textarea class="form-control" name="pregunta" rows="2" placeholder="Pregunta" required></textarea>
               </div>
@@ -53,9 +59,11 @@ if (isset($_POST['anadir'])) {
                 <div class="error-message"></div>
                 <div class="sent-message">Pregunta añadida con Éxito!</div>
               </div>
-              <div class="text-center"><button name="anadir" value="anadir" type="submit">Añadir</button></div>
+              <div style="text-align:center;">
+                  <input type="submit" name="anadir" class="btn btn-danger" value="Añadir">
+                  <a href="index.html" id="boton"  class="btn btn-warning">Cancelar</a>                   
+              </div>
             </form>
-
           </div>
       </div>
 </section>
