@@ -51,12 +51,12 @@ if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION
 
           <li class="dropdown"><a href="#"><span>Gestión</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">Preguntas</a></li>
-              <li><a href="about.html">Resultados</a></li>
+              <li><a href="selecciona_asig.php">Preguntas</a></li>
+              <li><a href="calificaciones.php">Resultados</a></li>
             </ul>
           </li>
-          <li><a href="services.html">Perfil</a></li>
-          <li><a href="index.html" class="getstarted">Buenas, Luis</a></li>
+          <li><a href="perfil.php">Perfil</a></li>
+          <li><a href="index.html" class="getstarted">Buenas, <?php echo $_SESSION['nombre'] ?></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -28,14 +28,15 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-<h2>Por favor, Inicia sesión con el usuario adecuado para acceder a este contenido.</h2>
-<h3>Redirigiendo al Inicio de Sesión en 5 Segundos...</h3>
-
+<div class="d-flex justify-content-center">
+  <h2>Por favor, Inicia sesión con el usuario adecuado para acceder a este contenido.</h2>
+  <h3>Redirigiendo al Inicio de Sesión en 5 Segundos...</h3>
+</div>
 </body>
 </html>
 
 <script>
-            setTimeout(function() {
-                window.location.href="login.php";
-            }, 5000);
-        </script>
+  setTimeout(function() {
+      window.location.href="login.php";
+  }, 5000);
+</script>

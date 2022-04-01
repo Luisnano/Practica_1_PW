@@ -8,7 +8,7 @@ include('config.php');
 include('clases_examen.php');
 
     //Variables de la clase examen
-    $alumno=$_SESSION['id_alumno'];
+    $alumno=$_SESSION['id'];
     $preguntas=$_SESSION['ids_pregs'];
     $seleccionadas="";
 
@@ -39,5 +39,5 @@ include('clases_examen.php');
     $connection->prepare($insercion)->execute([$alumno,$seleccionadas,$nota_examen]);
     
     
-    header("Location: http://localhost/Practica_1_PW/menu_alumnos.php");
+    header("Location: menu_alumnos.php");
 ?>
