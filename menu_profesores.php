@@ -1,26 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Del Alumno</title>
-</head>
-<body>
-    <h1>Bienvenido, ¿Qué quieres hacer hoy?</h1>
-    
-    <br><br>
-    <p> 
-        <a href="localhost/">Cambiar mi contraseña</a><br> 
-        <a href="examenes/selecciona_asig.php">Realizar examenes</a><br>
-        <!--Añadir desplegable de asignaturas y tal, DEBE MOSTRAR UNICAMENTE LAS MATRICULADAS POR EL ALUMNO  -->
-        <a href="localhost/">Ver Calificaciones</a><br>
-        <!--Las calificaciones mostradas serán las del alumno en cada una de las asignaturas y la media -->
-
-    </p>
-    <p><a href="localhost/">Cerrar sesión</a></p>
-    <!-- Hacer un logout -->
-    
-    
+<?php 
+include('assets/headers/header_prof.php');
+?>
+<br></br>
+<section id="services" class="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="icon-box">
+          <i class="bi bi-pencil-square"></i>
+          <h4><a href="selecciona_asig_prof.php">Gestión de Preguntas</a></h4>
+          <p>Añade, elimina o modifica las preguntas que se encuentran en la Base de Datos.</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-card-checklist"></i>
+          <h4><a href="#">Gestión de Resultados</a></h4>
+          <p>Revise los resultados obtenidos en los exámenes anteriores.</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-person-fill"></i>
+          <h4><a href="perfil_prof.php">Perfil</a></h4>
+          <p>Revise sus datos personales.</p>
+        </div>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <div class="icon-box">
+          <i class="bi bi-speedometer"></i>
+          <h4><a href="#">Estadísticas</a></h4>
+          <p>Vea todos los datos relacionados con el rendimiento de sus estudiantes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </body>
 </html>

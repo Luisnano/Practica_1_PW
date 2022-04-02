@@ -23,13 +23,16 @@ FASE 2, Funciones Básicas
 	-creación en phpmyadmin de las tablas especificadas en la fase anterior con ejemplos de relleno. (Luis)
 	-crear la base de gestion de datos de las preguntas. (Roldan)
 	-implementación de la generación automática de exámenes a partir de la batería de preguntas. (Roldan)
-	-implementación del guardado de respuestas en la BD. (Raul)
-	-implementación de la realización de un examen con guardado de nota. (Raul)
+	-implementación del guardado de respuestas en la BD. (Roldan)
+	-implementación de la realización de un examen con guardado de nota. (Roldan)
+	-Insercciión de preguntas en la db profesor (Raul)
 
 FASE 3, Funciones UserFriendly
 	-creación de los menús de gestión para perfil profesor (añadir preguntas, ver notas...). (Raul)
 	-creación de los menús de gestión para perfil alumno (hacer exámenes, ver resultados...). (Roldan)
-	-implementar un menú administrador con las funcionalidades que se le pide. (Luis)
+	-implementar un menú administrador con las funcionalidades que se le pide. (Raul):
+		-
+		
 
 FASE 4, Extras
 	-Se añaden las funcionalizades extras que se pensaron en la FASE 1 (Conjunto)
