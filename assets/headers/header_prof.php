@@ -46,14 +46,14 @@ if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION
       <nav id="navbar" class="navbar">
         <ul>
 
-          <li class="dropdown"><a href="#"><span>Gestión</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href=""><span>Gestión</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="gestion_preguntas.php">Preguntas</a></li>
-              <li><a href="about.html">Resultados</a></li>
+              <li><a href="selecciona_asig_prof.php">Preguntas</a></li>
+              <li><a href="gestion_resultados.php">Resultados</a></li>
             </ul>
           </li>
           <li><a href="cierra_sesion.php">Cerrar Sesión</a></li>
-          <li><a href="perfil.php" class="getstarted"><?php echo $_SESSION['nombre']; ?></a></li>
+          <li><a href="perfil_prof.php" class="getstarted"><?php echo $_SESSION['nombre']; ?></a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

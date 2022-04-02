@@ -22,7 +22,7 @@ include('assets/headers/header_prof.php');
       <div class="col-md-6 mt-4 mt-md-0">
         <div class="icon-box">
           <i class="bi bi-person-fill"></i>
-          <h4><a href="#">Perfil</a></h4>
+          <h4><a href="perfil_prof.php">Perfil</a></h4>
           <p>Revise sus datos personales.</p>
         </div>
       </div>
