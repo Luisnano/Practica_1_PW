@@ -3,14 +3,11 @@ include('assets/headers/header_prof.php');
 include('config.php');
 $id_prof = $_SESSION['id'];
 $id_asig_edit = $_SESSION['id_asig_edit'];
-$tema_asig = ['tema_edit'];
+$tema_asig = $_SESSION['tema_edit'];
 foreach($connection->query("SELECT nombre FROM asignatura WHERE id_asignatura = $id_asig_edit") as $asig_edit){
     $nombre_asig = $asig_edit['nombre'];
 }
-?>
 
-
-<?php
 if (isset($_POST['anadir'])) {
 
   $pregunta = $_POST['pregunta'];
@@ -21,20 +18,26 @@ if (isset($_POST['anadir'])) {
   $correcta = $_POST['correcta'];
 
   //Insertamos pregunta en la BD.
-  $anadirpregunta = "INSERT INTO pregunta (id_asignatura,texto_pregunta,r1,r2,r3,r4,correcta,tema) VALUES (?,?,?,?,?,?,?,?)";
-  $connection->prepare($anadirpregunta)->execute([$id_asig_edit,$pregunta,$r1,$r2,$r3,$r4,$correcta,$tema_asig]);
-
-  //Comprobamos que la pregunta que hemos añadido se encuentra en la BD.
-  $consultapregunta = "SELECT texto_pregunta FROM pregunta WHERE tema = '$tema_asig'";
-  $preguntas = $qconsultapregunta->fetch(PDO::FETCH_ASSOC);
-  if($preguntas['textopregunta'] == $pregunta)
-    header("Location: mensaje_anadido_exito.php");
-  else
-    echo '<p class="error">Error! Comprueba que todos los datos son correctos o contacta con el administrador.</p>';
-
-  
+  $anadirpregunta = "INSERT INTO pregunta (id_asignatura,texto_pregunta,r1,r2,r3,r4,correcta,tema) VALUES (:id_asignatura,:texto_pregunta,:r1,:r2,:r3,:r4,:correcta,:tema)";
+  $anadirpregunta = $connection->prepare($anadirpregunta);
+      
+  $anadirpregunta->bindParam(':id_asignatura',$id_asig_edit,PDO::PARAM_INT, 5);
+  $anadirpregunta->bindParam(':texto_pregunta',$pregunta,PDO::PARAM_STR);
+  $anadirpregunta->bindParam(':r1',$r1,PDO::PARAM_STR);
+  $anadirpregunta->bindParam(':r2',$r2,PDO::PARAM_STR);
+  $anadirpregunta->bindParam(':r3',$r3,PDO::PARAM_STR);
+  $anadirpregunta->bindParam(':r4',$r4,PDO::PARAM_STR);
+  $anadirpregunta->bindParam(':correcta',$correcta,PDO::PARAM_STR);
+  $anadirpregunta->bindParam(':tema',$tema_asig,PDO::PARAM_STR);
+      
+  $anadirpregunta->execute();
+  header("Location: mensaje_anadido_exito.php");
 }
 ?>
+<br></br><br></br>
+<div class="d-flex justify-content-center">
+    <h2>Añadir pregunta sobre <?php echo $tema_asig ?></h2>
+</div>
 <section id="contact" class="contact">
       <div class="container">
 
@@ -61,7 +64,7 @@ if (isset($_POST['anadir'])) {
               </div>
               <div style="text-align:center;">
                   <input type="submit" name="anadir" class="btn btn-danger" value="Añadir">
-                  <a href="index.html" id="boton"  class="btn btn-warning">Cancelar</a>                   
+                  <a href="listado_preguntas_tema.php" id="boton"  class="btn btn-warning">Cancelar</a>                   
               </div>
             </form>
           </div>
