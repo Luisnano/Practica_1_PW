@@ -15,7 +15,7 @@ include('assets/headers/header_prof.php');
       <div class="col-md-6 mt-4 mt-md-0">
         <div class="icon-box">
           <i class="bi bi-card-checklist"></i>
-          <h4><a href="#">Gestión de Resultados</a></h4>
+          <h4><a href="gestion_resultados.php">Gestión de Resultados</a></h4>
           <p>Revise los resultados obtenidos en los exámenes anteriores.</p>
         </div>
       </div>

@@ -39,4 +39,4 @@ FASE 4, Extras
 
 FASE 5, Front-End
 	-Una vez completadas todas las funcionalidades y testeado el funcionamiento de la web,
-	se retoca todos los aspectos visuales necesarios para embellecer la web. (Conjunto)
+	se retoca todos los aspectos visuales necesarios para embellecer la web. (Raúl)
