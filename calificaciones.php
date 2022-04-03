@@ -39,6 +39,9 @@
                     echo "<td>".bcdiv($media,$n_notas,2)."</td>";
                 echo "</tr>";
             
+        //Actualizacion de la media
+        $sql = "UPDATE matricula SET nota_final=?";
+        $connection->prepare($sql)->execute([bcdiv($media,$n_notas,2)]);
         ?>
     </table>
     

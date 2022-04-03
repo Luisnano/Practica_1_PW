@@ -35,8 +35,8 @@ include('clases_examen.php');
     $nota_examen=($nota_examen/$_SESSION['n_preguntas'])*10;
     
     //Una vez tengamos los elementos, creamos un nuevo examen y los insertamos
-    $insercion = "INSERT INTO examen (id_alumno,id_pregunta,nota_examen) VALUES (?,?,?)";
-    $connection->prepare($insercion)->execute([$alumno,$seleccionadas,$nota_examen]);
+    $insercion = "INSERT INTO examen (id_alumno,id_preguntas,nota_examen,id_asignatura) VALUES (?,?,?,?)";
+    $connection->prepare($insercion)->execute([$alumno,$seleccionadas,$nota_examen,$_SESSION['id_asignatura']]);
     
     
     header("Location: menu_alumnos.php");
