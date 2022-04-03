@@ -1,6 +1,38 @@
 <?php 
 include('assets/headers/header_prof.php');
 include('config.php');
+include('actualiza_matricula.php');
+
+
+$id_prof = $_SESSION['id'];
+
+$datosAsignatura = $connection->prepare("SELECT * FROM asignatura WHERE id_asignatura= (SELECT id_asignatura FROM profesor WHERE id_profesor = $id_prof)");
+$datosAsignatura->execute();
+$datosAsignatura = $datosAsignatura->fetch(PDO::FETCH_ASSOC);
+
+$id_asignatura = $datosAsignatura['id_asignatura'];
+
+$notaMediaAsignatura = $porcentajeAprobados = $numeroMatriculados = $numeroSobresalientes = $numeroNotables = $numeroSuspensos = 0;
+
+foreach($connection->query("SELECT * FROM matricula WHERE id_asignatura = $id_asignatura") as $matricula){
+    $numeroMatriculados++;
+    $notaMediaAsignatura = $notaMediaAsignatura + $matricula['nota_final'];
+    if($matricula['nota_final'] >= 5){
+        $porcentajeAprobados++;
+    }
+    if($matricula['nota_final'] >= 9){
+        $numeroSobresalientes++;
+    }
+    if($matricula['nota_final'] >= 7){
+        $numeroNotables++;
+    }
+}
+
+$notaMediaAsignatura = $notaMediaAsignatura/$numeroMatriculados;
+$numeroSuspensos = $numeroMatriculados - $porcentajeAprobados;
+$porcentajeAprobados = ($porcentajeAprobados/$numeroMatriculados) * 100;
+
+
 ?>
 
 <br></br>
@@ -9,34 +41,47 @@ include('config.php');
     <div class="row">
       <div class="col-md-12">
         <div class="icon-box">
-          <i class="bi bi-pencil-square"></i>
-          <h4></h4>
-          <p>Añade, elimina o modifica las preguntas que se encuentran en la Base de Datos.</p>
+            <i class="bi bi-pencil-square"></i>
+            <h4>Estadísticas Generales de <?php echo $datosAsignatura['nombre'] ?></h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                        <li>Número de Matriculados: <?php echo $numeroMatriculados?></li>
+                        <li>Nota Media:  <?php echo $notaMediaAsignatura?></li>
+                        <li>Número de Sobresalientes:  <?php echo $numeroSobresalientes?></li>
+                        <li>Número de Notables:  <?php echo $numeroNotables?></li>
+                        <li>Número de Suspensos:  <?php echo $numeroSuspensos?></li>
+                        <li>Porcentaje de Aprobados:  <?php echo $porcentajeAprobados?>%</li>
+                     
+                    </ul>
+                </div>
+            </div>
         </div>
       </div>
       <div class="col-md-12">
         <div class="icon-box">
           <i class="bi bi-card-checklist"></i>
-          <h4>Gestión de Resultados</h4>
-          <p>Revise los resultados obtenidos en los exámenes anteriores.</p>
+          <h4>Resultados Individuales</h4>
+          <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                    <?php foreach($connection->query("SELECT * FROM estudiante WHERE id_estudiante = (SELECT id_estudiante FROM matricula WHERE id_asignatura = $id_asignatura)") as $estudiante){
+                            $idEstudiante = $estudiante['id_estudiante'];
+                            $datosMatriculaEstudiante = $connection->prepare("SELECT nota_final FROM matricula WHERE id_estudiante = $idEstudiante AND id_asignatura = $id_asignatura");
+                            $datosMatriculaEstudiante->execute();
+                            $datosMatriculaEstudiante = $datosMatriculaEstudiante->fetch(PDO::FETCH_ASSOC);
+
+                            $datosExamenEstudiante = $connection->prepare("SELECT nota_examen FROM examen WHERE id_examen = (SELECT MAX(id_examen) FROM examen WHERE id_alumno = $idEstudiante AND id_asignatura = $id_asignatura)");
+                            $datosExamenEstudiante->execute();
+                            $datosExamenEstudiante = $datosExamenEstudiante->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                        <li><?php echo $estudiante['apellido_estudiante']?>, <?php echo $estudiante['nombre_estudiante']?> -> Nota Media: <?php echo $datosMatriculaEstudiante['nota_final']?> || Nota Último Exámen: <?php echo $datosExamenEstudiante['nota_examen']?></li>
+                    <?php } ?>
+                    </ul>
+                </div>
+            </div>
         </div>
       </div>
-      <div class="col-md-12">
-        <div class="icon-box">
-          <i class="bi bi-person-fill"></i>
-          <h4>Perfil</h4>
-          <p>Revise sus datos personales.</p>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="icon-box">
-          <i class="bi bi-speedometer"></i>
-          <h4>Estadísticas</h4>
-          <p>Vea todos los datos relacionados con el rendimiento de sus estudiantes.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 </body>
 </html>
