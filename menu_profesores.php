@@ -26,13 +26,6 @@ include('assets/headers/header_prof.php');
           <p>Revise sus datos personales.</p>
         </div>
       </div>
-      <div class="col-md-6 mt-4 mt-md-0">
-        <div class="icon-box">
-          <i class="bi bi-speedometer"></i>
-          <h4><a href="#">Estadísticas</a></h4>
-          <p>Vea todos los datos relacionados con el rendimiento de sus estudiantes.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>

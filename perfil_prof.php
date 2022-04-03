@@ -36,12 +36,13 @@ $nombreCentro = $nombreCentro->fetch(PDO::FETCH_ASSOC);
         <h4>Centro: <?php echo $nombreCentro['nombre_centro']?> </h4>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0">
-        <h3>Asignaturas en Curso</h3>
+        <h3>Asignatura en Curso</h3>
         <?php foreach($connection->query($listaAsignaturasQuery) as $asignatura){ ?>
         <ul>
             <li><i class="bi bi-arrow-right"></i><?php echo $asignatura['nombre']?></li>
         </ul>
         <?php }?>
+        <a href="cambiar_pass_prof.php">Cambiar mi contraseña</a><br> 
         </div>
     </div>
 
