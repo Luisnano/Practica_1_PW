@@ -6,12 +6,10 @@ $idEstudianteEdit= $_SESSION['id_estudiante_edit'];
 
 if (isset($_POST['anadir'])) {
 
-  $pregunta = $_POST['pregunta'];
-  $r1 = $_POST['r1'];
-  $r2 = $_POST['r2'];
-  $r3 = $_POST['r3'];
-  $r4 = $_POST['r4'];
-  $correcta = $_POST['correcta'];
+  $userAlum = $_POST['nombre'];
+  $nombreEstudiante = $_POST['apellidos'];
+  $apellidoEstudiante = $_POST['username'];
+  $contraseñaEstudiante = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   //Insertamos estudiante en la BD.
   $anadirEstudiante = "INSERT INTO estudiante (user_alum,nombre_estudiante,apellido_estudiante,contraseña_estudiante) VALUES (:user_alum,:nombre_estudiante,:apellido_estudiante,:contraseña_estudiante)";
@@ -23,7 +21,7 @@ if (isset($_POST['anadir'])) {
   $anadirEstudiante->bindParam(':contraseña_estudiante',$contraseñaEstudiante,PDO::PARAM_STR);
       
   $anadirEstudiante->execute();
-  header("Location: mensaje_anadido_exito.php");
+  header("Location: listado_estudantes.php");
 }
 ?>
 <br></br><br></br>
@@ -35,14 +33,11 @@ if (isset($_POST['anadir'])) {
         <div class="row mt-5">
             <form action="" method="post" class="php-email-form">
                 <div class="col-md-12 form-group">
-                  <input type="text" name="r1" class="form-control" id="r1" placeholder="Nombre" required>
-                  <input type="text" name="r2" class="form-control" id="r2" placeholder="Apellidos" required>
-                  <input type="text" name="r3" class="form-control" id="r3" placeholder="Username" required>
-                  <input type="text" name="r4" class="form-control" id="r4" placeholder="Contraseña" required>
+                  <input type="text" name="r1" class="form-control" id="nombre" placeholder="Nombre" required>
+                  <input type="text" name="r2" class="form-control" id="apellidos" placeholder="Apellidos" required>
+                  <input type="text" name="r3" class="form-control" id="username" placeholder="Username" required>
+                  <input type="password" name="r4" class="form-control" id="password" placeholder="Contraseña" required>
                 </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="correcta" id="correcta" placeholder="Respuesta Correcta (Solo la primera palabra)" required>
               </div>
             
               <div style="text-align:center;">
