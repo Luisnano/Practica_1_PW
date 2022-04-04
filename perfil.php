@@ -4,10 +4,11 @@
 ?>
 
 <body style="text-indent:20px">
+<br></br><br></br><br></br>
+
 <?php
 include('config.php');
 
-echo "<br><br><br>";
     echo "<h2>Las asignaturas en las que estoy matriculado son:</h2>";
     echo "<br>";
     echo "<p>";

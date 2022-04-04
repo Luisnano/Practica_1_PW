@@ -7,7 +7,7 @@
     include('actualiza_matricula.php');
 ?>
 <body>
-    <br><br>
+    <br><br><br></br>
     <h1>Bienvenido a tus Calificaciones</h1>
     <br><br>
     <h2>Calificaciones Generales del alumno</h2>
