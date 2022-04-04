@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     <div class="container">
         <form action="selecciona_tema_prof.php" method="post">
             <div class="d-flex justify-content-center">
-                <h2>Todos los Temas</h2>
+                <h2>Temas Recientes</h2>
             </div>
 
             <br></br>
