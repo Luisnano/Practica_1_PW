@@ -45,6 +45,9 @@ if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION
       <h1 class="logo me-auto"><a href="menu_admin.php">Virtual Campus - ADMINISTRACIÓN</a></h1>
       <nav id="navbar" class="navbar">
         <i class="bi bi-list mobile-nav-toggle"></i>
+        <ul>
+          <li><a href="index.html" class="getstarted">Salir</a></li>
+        </ul>
       </nav>
 
     </div>
