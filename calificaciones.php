@@ -10,7 +10,8 @@
     <br><br>
     <h1>Bienvenido a tus Calificaciones</h1>
     <br><br>
-    <h2>Calificaciones totales  </h2>
+    <h2>Calificaciones Generales del alumno</h2>
+    <div class="d-flex justify-content-center">
     <table>
         
         <?php
@@ -42,6 +43,8 @@
             
         ?>
     </table>
+    
+    </div>
     
 
 
