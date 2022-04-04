@@ -63,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
                         </p>
                         <div class="read-more">
                             <form action="" method="post" class="php-email-form">
-                                <button class="btn btn-danger" name="editar" value="<?php echo $pregunta['id_pregunta']?>" type="submit">Editar</button>
-                                <button class="btn btn-danger" name="borrar" value="<?php echo $pregunta['id_pregunta']?>" type="submit">Borrar</button>
+                                <button class="btn btn-danger" name="editar" value="<?php echo $estudiante['id_estudiante']?>" type="submit">Editar</button>
+                                <button class="btn btn-danger" name="borrar" value="<?php echo $estudiante['id_estudiante']?>" type="submit">Borrar</button>
                             </form>
                         </div>
                     </div>

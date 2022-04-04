@@ -42,7 +42,7 @@ if(!isset($_SESSION['loggedin']) ||  $_SESSION['loggedin'] == false || $_SESSION
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="menu_profesores.php">Virtual Campus - ADMINISTRACIÓN</a></h1>
+      <h1 class="logo me-auto"><a href="menu_admin.php">Virtual Campus - ADMINISTRACIÓN</a></h1>
       <nav id="navbar" class="navbar">
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
