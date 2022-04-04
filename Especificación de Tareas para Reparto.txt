@@ -31,7 +31,6 @@ FASE 3, Funciones UserFriendly
 	-creación de los menús de gestión para perfil profesor (añadir preguntas, ver notas...). (Raul)
 	-creación de los menús de gestión para perfil alumno (hacer exámenes, ver resultados...). (Roldan)
 	-implementar un menú administrador con las funcionalidades que se le pide. (Raul):
-		-
 		
 
 FASE 4, Extras
