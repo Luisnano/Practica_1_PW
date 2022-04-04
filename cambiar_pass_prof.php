@@ -3,17 +3,18 @@
     include('assets/headers/header_prof.php');
     include('config.php');
     $idProf = $_SESSION['id'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $insercion = "UPDATE profesor SET contraseña_profesor = ? where id_profesor = $idProf";
-    $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+    $pass = $_POST['pass'];
+    $pass = password_hash($pass, PASSWORD_DEFAULT);
     $connection->prepare($insercion)->execute([$pass]);
-    header("Location:menu_prof.php");
-
+    header("Location:menu_profesores.php");
+    }
 ?>
-<br>
-<br>
-<br>
+
+<br></br><br></br>
 <h2>Selecciona la contraseña nueva</h2>
-<form action="procesa_pass.php" method="post">
+<form action="" method="post">
 
     Nueva contraseña: <input type="password" name="pass">
 

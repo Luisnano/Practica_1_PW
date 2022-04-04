@@ -28,7 +28,7 @@ if (isset($_POST['anadir'])) {
     $contrasenaprof = password_hash($contrasenaprof, PASSWORD_DEFAULT);
 
   //Insertamos estudiante en la BD.
-  $editarProf = "UPDATE profesor SET user_prof = '$userProf', nombre_profesor = '$nombreProf', id_asignatura= $idAsignatura, contraseña_profesor = '$contrasenaProf' WHERE id_profesor = $idProf";
+  $editarProf = "UPDATE profesor SET user_prof = '$userProf', nombre_profesor = '$nombreProf', id_asignatura= $idAsignatura, contraseña_profesor = '$contrasenaprof' WHERE id_profesor = $idProf";
   $editarProf = $connection->prepare($editarProf);
   $editarProf->execute();
 
