@@ -3,7 +3,6 @@ include('assets/headers/header_prof.php');
 include('config.php');
 include('actualiza_matricula.php');
 
-
 $id_prof = $_SESSION['id'];
 
 $datosAsignatura = $connection->prepare("SELECT * FROM asignatura WHERE id_asignatura= (SELECT id_asignatura FROM profesor WHERE id_profesor = $id_prof)");
@@ -47,11 +46,11 @@ $porcentajeAprobados = ($porcentajeAprobados/$numeroMatriculados) * 100;
                 <div class="col-md-12">
                     <ul>
                         <li>Número de Matriculados: <?php echo $numeroMatriculados?></li>
-                        <li>Nota Media:  <?php echo $notaMediaAsignatura?></li>
+                        <li>Nota Media:  <?php echo number_format($notaMediaAsignatura,2);?></li>
                         <li>Número de Sobresalientes:  <?php echo $numeroSobresalientes?></li>
                         <li>Número de Notables:  <?php echo $numeroNotables?></li>
                         <li>Número de Suspensos:  <?php echo $numeroSuspensos?></li>
-                        <li>Porcentaje de Aprobados:  <?php echo $porcentajeAprobados?>%</li>
+                        <li>Porcentaje de Aprobados:  <?php echo number_format($porcentajeAprobados,1)?>%</li>
                      
                     </ul>
                 </div>
@@ -65,17 +64,25 @@ $porcentajeAprobados = ($porcentajeAprobados/$numeroMatriculados) * 100;
           <div class="row">
                 <div class="col-md-12">
                     <ul>
-                    <?php foreach($connection->query("SELECT * FROM estudiante WHERE id_estudiante = (SELECT id_estudiante FROM matricula WHERE id_asignatura = $id_asignatura)") as $estudiante){
-                            $idEstudiante = $estudiante['id_estudiante'];
-                            $datosMatriculaEstudiante = $connection->prepare("SELECT nota_final FROM matricula WHERE id_estudiante = $idEstudiante AND id_asignatura = $id_asignatura");
+                    <?php 
+                        foreach($connection->query("SELECT id_estudiante FROM matricula WHERE id_asignatura = $id_asignatura") as $idEstudiante){
+                           
+                            $idEstudianteActual = $idEstudiante['id_estudiante'];
+                            
+                            $datosEstudianteActual = $connection->prepare("SELECT * FROM estudiante WHERE id_estudiante = $idEstudianteActual");
+                            $datosEstudianteActual->execute();
+                            $datosEstudianteActual = $datosEstudianteActual->fetch(PDO::FETCH_ASSOC);
+                            
+                            $datosMatriculaEstudiante = $connection->prepare("SELECT nota_final FROM matricula WHERE id_estudiante = $idEstudianteActual AND id_asignatura = $id_asignatura");
                             $datosMatriculaEstudiante->execute();
                             $datosMatriculaEstudiante = $datosMatriculaEstudiante->fetch(PDO::FETCH_ASSOC);
 
-                            $datosExamenEstudiante = $connection->prepare("SELECT nota_examen FROM examen WHERE id_examen = (SELECT MAX(id_examen) FROM examen WHERE id_alumno = $idEstudiante AND id_asignatura = $id_asignatura)");
+                            $datosExamenEstudiante = $connection->prepare("SELECT nota_examen FROM examen WHERE id_examen = (SELECT MAX(id_examen) FROM examen WHERE id_alumno = $idEstudianteActual AND id_asignatura = $id_asignatura)");
                             $datosExamenEstudiante->execute();
                             $datosExamenEstudiante = $datosExamenEstudiante->fetch(PDO::FETCH_ASSOC);
+                            
                     ?>
-                        <li><?php echo $estudiante['apellido_estudiante']?>, <?php echo $estudiante['nombre_estudiante']?> -> Nota Media: <?php echo $datosMatriculaEstudiante['nota_final']?> || Nota Último Exámen: <?php echo $datosExamenEstudiante['nota_examen']?></li>
+                        <li><?php echo $datosEstudianteActual['apellido_estudiante']?>, <?php echo $datosEstudianteActual['nombre_estudiante']?> -> Nota Media: <?php echo $datosMatriculaEstudiante['nota_final']?> || Nota Último Exámen: <?php echo $datosExamenEstudiante['nota_examen']?></li>
                     <?php } ?>
                     </ul>
                 </div>
