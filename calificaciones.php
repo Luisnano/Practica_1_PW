@@ -10,7 +10,6 @@
     <br><br><br></br>
     <h1>Bienvenido a tus Calificaciones</h1>
     <br><br>
-    <h2>Calificaciones Generales del alumno</h2>
     <div class="d-flex justify-content-center">
     <table>
         
@@ -20,7 +19,7 @@
             $query="SELECT * from examen";
             $res=$connection->query($query);
             echo "<tr>";
-            echo "<th>Notas</th>";
+            echo "<th>Notas en cada examen</th>";
             echo "</tr>";
             foreach($res as $i){
                 
@@ -35,7 +34,7 @@
 
             }
             echo "<tr>";
-                echo "<th>Media</th>";
+                echo "<th>Media total del curso</th>";
             echo "</tr>";
                 echo "<tr>";
                     echo "<td>".bcdiv($media,$n_notas,2)."</td>";
