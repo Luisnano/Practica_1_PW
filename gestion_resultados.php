@@ -40,7 +40,7 @@ $porcentajeAprobados = ($porcentajeAprobados/$numeroMatriculados) * 100;
     <div class="row">
       <div class="col-md-12">
         <div class="icon-box">
-            <i class="bi bi-pencil-square"></i>
+            <i class="bi bi-speedometer"></i>
             <h4>Estadísticas Generales de <?php echo $datosAsignatura['nombre'] ?></h4>
             <div class="row">
                 <div class="col-md-12">
@@ -59,7 +59,7 @@ $porcentajeAprobados = ($porcentajeAprobados/$numeroMatriculados) * 100;
       </div>
       <div class="col-md-12">
         <div class="icon-box">
-          <i class="bi bi-card-checklist"></i>
+          <i class="bi bi-person-lines-fill"></i>
           <h4>Resultados Individuales</h4>
           <div class="row">
                 <div class="col-md-12">
