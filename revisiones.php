@@ -2,9 +2,9 @@
     include('assets/headers/header_alum.php');
     include('config.php');
     session_start();
-?>
+?>  
 
-<br><br><br>
+<br><br><br><br>
 
 
     <?php

@@ -72,7 +72,7 @@
     //obtenemos de la base de datos la lista de asignaturas
     $id_preg_totales = array();
 
-    $tema= $_POST['tema'];
+    $tema= $_SESSION['tema'];
     $id_asignatura = $_SESSION['id_asignatura'];
 
     foreach ( $connection->query("SELECT * FROM pregunta ") as $i ){

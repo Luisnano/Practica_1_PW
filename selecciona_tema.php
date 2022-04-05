@@ -11,7 +11,7 @@
 <br>
 <br>
     
-    <form action="genera_exam.php" method="post">
+    <form action="opcion_examen.php" method="post">
         
         <?php
 
