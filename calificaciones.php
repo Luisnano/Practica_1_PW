@@ -8,7 +8,9 @@
 ?>
 <body>
     <br><br><br></br>
+    <div class="d-flex justify-content-center">
     <h1>Bienvenido a tus Calificaciones</h1>
+    </div>
     <br><br>
     <div class="d-flex justify-content-center">
     <table>
@@ -42,10 +44,11 @@
             
         ?>
     </table>
-    
     </div>
+   
     
 
-
+    <div class="d-flex justify-content-center">
     <a href="menu_alumnos.php">Volver atras</a>
+    </div>
 </body>
